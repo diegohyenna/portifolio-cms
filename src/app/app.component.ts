@@ -1,4 +1,6 @@
+import { FormControl, FormGroup } from '@angular/forms';
 import { Component } from '@angular/core';
+
 import { AngularEditorConfig } from '@kolkov/angular-editor';
 
 @Component({
@@ -48,7 +50,7 @@ export class AppComponent {
     translate: 'yes',
     enableToolbar: true,
     showToolbar: true,
-    placeholder: 'Digite o texto aqui...',
+    placeholder: 'Enter text here...',
     defaultParagraphSeparator: '',
     defaultFontName: '',
     defaultFontSize: '',
@@ -73,8 +75,9 @@ export class AppComponent {
         tag: 'h1',
       },
     ],
-    // uploadUrl: 'v1/image',
-    // uploadWithCredentials: false,
+    uploadUrl: 'v1/image',
+    // upload: (file: File) => { ... }
+    uploadWithCredentials: false,
     sanitize: true,
     toolbarPosition: 'top',
     // toolbarHiddenButtons: [
@@ -83,5 +86,11 @@ export class AppComponent {
     // ]
   };
 
-  showInfo(link: any) {}
+  myGroup!: FormGroup;
+
+  ngOnInit() {
+    this.myGroup = new FormGroup({
+      htmlContent: new FormControl(),
+    });
+  }
 }

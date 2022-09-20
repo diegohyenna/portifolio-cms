@@ -28,9 +28,15 @@
       </mat-list-item>
     </mat-nav-list>
   </mat-drawer>
-  <mat-drawer-content class="sidenav__content"
-    >
-    <angular-editor id="editor1" formControlName="htmlContent1" [config]="editorConfig"></angular-editor>
+  <mat-drawer-content class="sidenav__content">
+    <form [formGroup]="myGroup">
+      <angular-editor
+        id="editor1"
+        formControlName="htmlContent"
+        [config]="editorConfig"
+      ></angular-editor>
+    </form>
+
     <router-outlet></router-outlet
   ></mat-drawer-content>
 </mat-drawer-container>
