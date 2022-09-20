@@ -1,17 +1,12 @@
+import { HeroComponent } from './hero.component';
 import { HomeModule } from './../home/home.module';
-import { HomeComponent } from './../home/home.component';
 import { HeroRoutingModule } from './hero-routing.module';
-import {
-  NgModule,
-  CUSTOM_ELEMENTS_SCHEMA,
-  NO_ERRORS_SCHEMA,
-} from '@angular/core';
+import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @NgModule({
-  declarations: [],
+  declarations: [HeroComponent],
   imports: [CommonModule, HeroRoutingModule, HomeModule],
-  providers: [],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
+  exports: [HeroComponent],
 })
 export class HeroModule {}

@@ -1,7 +1,7 @@
-<!-- <mat-toolbar class="header" color="primary">
+<mat-toolbar class="header" color="primary">
   <div class="header__brand">
-    <h1 class="header__brand-title">{{ title }}</h1>
     <mat-icon class="header__brand-icon">rocket</mat-icon>
+    <div class="header__brand" [innerHTML]="title"></div>
   </div>
   <span class="header__spacer"></span>
   <button
@@ -15,20 +15,22 @@
 <mat-drawer-container class="sidenav">
   <mat-drawer class="sidenav__container" mode="side" opened
     ><mat-nav-list class="sidenav__list">
-      <mat-list-item class="sidenav__item" *ngFor="let link of links">
-        <a
-          matLine
-          class="sidenav__link"
-          [routerLink]="link.href"
-          routerLinkActive="sidenav__link--active"
-          >{{ link.title }}</a
-        >
+      <mat-list-item
+        class="sidenav__item"
+        *ngFor="let link of links"
+        [routerLink]="link.href"
+        [routerLinkActive]="'sidenav__item--active'"
+      >
+        <mat-icon mat-list-icon>{{ link.icon }}</mat-icon>
+        <div mat-line class="sidenav__item-title">
+          <strong>{{ link.title }}</strong>
+        </div>
       </mat-list-item>
     </mat-nav-list>
   </mat-drawer>
   <mat-drawer-content class="sidenav__content"
-    ><router-outlet></router-outlet
+    >
+    <angular-editor id="editor1" formControlName="htmlContent1" [config]="editorConfig"></angular-editor>
+    <router-outlet></router-outlet
   ></mat-drawer-content>
-</mat-drawer-container> -->
-<home></home>
-<router-outlet></router-outlet>
+</mat-drawer-container>

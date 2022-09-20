@@ -1,11 +1,37 @@
+// @use "@angular/material" as mat;
+
+// $my-custom-level: mat.define-typography-level(
+//   $font-family: Raleway,
+//   $font-weight: 400,
+//   $font-size: 1rem,
+//   $line-height: 1,
+//   $letter-spacing: normal,
+// );
+
+// @include mat.core($my-custom-level);
+
+@import "../styles.scss";
+
 .header {
   .header__brand {
     display: flex;
     align-items: center;
 
-    .header__brand-title {
-      text-transform: capitalize;
-      font-size: 1.6rem;
+    .header__brand {
+      .header__brand-title {
+        text-transform: capitalize;
+        font-size: 1.8rem;
+
+        .header__brand-link {
+          color: $light-default;
+          text-decoration: none;
+
+          &:hover {
+            color: $light-secondary;
+            text-decoration: underline;
+          }
+        }
+      }
     }
   }
 
@@ -16,13 +42,22 @@
 
 .sidenav {
   width: 100%;
-  height: 100%;
+  height: calc(100% - 64px);
   border: 1px solid rgba(0, 0, 0, 0.5);
 
+  .sidenav__container {
+    min-width: 200px;
+
+    .sidenav__list {
+      height: calc(100% - 64px);
+
+      .sidenav__item--active {
+        color: $light-primary;
+      }
+    }
+  }
+
   .sidenav__content {
-    width: 100%;
-    height: 100%;
-    display: flex;
     padding: 20px;
   }
 }

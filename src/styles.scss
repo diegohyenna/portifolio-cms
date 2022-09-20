@@ -1,4 +1,61 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+//THEME
+$light-primary: #8a2be2;
+$light-secondary: #00eeff;
+$light-danger: #dc143c;
+$light-warning: #ffa500;
+$light-info: #00bfff;
+$light-success: #3efdbd;
+$light-text-primary: #070707;
+$light-text-secondary: #605966;
+$light-text-disabled: #cbc7cf;
+$light-default: #fff;
+
+* > :not(.mat-icon),
+* > :not(.material-icons) {
+  font-family: Raleway, Arial, "Helvetica Neue", sans-serif !important;
+}
+
+@mixin font() {
+  font-size: 16px;
+  color: $light-text-primary;
+}
+
+html,
+body {
+  height: 100%;
+  @include font();
+}
+
+p {
+  @include font();
+}
+
+body {
+  margin: 0;
+}
+
+// .header__brand {
+//   display: flex;
+//   align-items: center;
+
+//   .header__brand {
+//     .header__brand-title {
+//       text-transform: capitalize;
+//       font-size: 1.8rem;
+
+//       .header__brand-link {
+//         color: $light-default;
+//         text-decoration: none;
+
+//         &:hover {
+//           color: $light-secondary;
+//           text-decoration: underline;
+//         }
+//       }
+//     }
+//   }
+// }

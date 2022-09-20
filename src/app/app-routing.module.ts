@@ -8,6 +8,11 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
+    path: '',
+    pathMatch: 'full',
+    redirectTo: 'home',
+  },
+  {
     path: 'home',
     loadChildren: () => import('./home/home.module').then((m) => m.HomeModule),
   },
@@ -19,11 +24,6 @@ const routes: Routes = [
     path: 'about',
     loadChildren: () =>
       import('./about/about.module').then((m) => m.AboutModule),
-  },
-  {
-    path: '',
-    pathMatch: 'full',
-    redirectTo: 'home',
   },
   {
     path: 'project',
@@ -43,6 +43,5 @@ const routes: Routes = [
   declarations: [],
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
 })
 export class AppRoutingModule {}

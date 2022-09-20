@@ -6,5 +6,6 @@ import { CommonModule } from '@angular/common';
 @NgModule({
   declarations: [PageNotFoundComponent],
   imports: [CommonModule, PageNotFoundRoutingModule],
+  exports: [PageNotFoundComponent],
 })
 export class PageNotFoundModule {}
