@@ -1,14 +1,15 @@
 # PortifolioCms
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.3.
+Esse projeto foi feito com [Angular CLI](https://github.com/angular/angular-cli) versão 13.3.3.
 
-## Development server
+## Rodando localmente
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## Code Scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- Criando Lazy Loading Module
+  `ng generate module nomeDoModulo --route nomeDaRota --module app.module`
 
 ## Build
 
