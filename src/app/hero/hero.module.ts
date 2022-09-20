@@ -1,3 +1,4 @@
+import { HomeModule } from './../home/home.module';
 import { HomeComponent } from './../home/home.component';
 import { HeroRoutingModule } from './hero-routing.module';
 import {
@@ -9,7 +10,7 @@ import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [],
-  imports: [CommonModule, HeroRoutingModule],
+  imports: [CommonModule, HeroRoutingModule, HomeModule],
   providers: [],
   schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
 })

@@ -8,9 +8,9 @@ import {
 import { CommonModule } from '@angular/common';
 
 @NgModule({
-  declarations: [],
+  declarations: [HomeComponent],
   imports: [CommonModule, HomeRoutingModule],
-  exports: [HomeRoutingModule],
+  exports: [HomeRoutingModule, HomeComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
 })
 export class HomeModule {}
