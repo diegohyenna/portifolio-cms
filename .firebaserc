@@ -3,7 +3,7 @@
     "cms-api-curriculo": {
       "hosting": {
         "portifolio-cms": [
-          "cms-api-curriculo"
+          "dgsite-cms"
         ]
       }
     }
