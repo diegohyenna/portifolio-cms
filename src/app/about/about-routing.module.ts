@@ -1,3 +1,4 @@
+import { AboutEditComponent } from './about-edit/about-edit.component';
 import { AboutComponent } from './about.component';
 
 import { NgModule } from '@angular/core';
@@ -7,6 +8,12 @@ const routes: Routes = [
   {
     path: '',
     component: AboutComponent,
+    children: [
+      {
+        path: 'edit/:id',
+        component: AboutEditComponent,
+      },
+    ],
   },
 ];
 
