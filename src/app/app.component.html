@@ -1,17 +1,5 @@
-<mat-toolbar class="header" color="primary">
-  <div class="header__brand">
-    <mat-icon class="header__brand-icon">rocket</mat-icon>
-    <div class="header__brand" [innerHTML]="title"></div>
-  </div>
-  <span class="header__spacer"></span>
-  <button
-    mat-icon-button
-    class="header__favorite favorite-icon"
-    aria-label="Example icon-button with heart icon"
-  >
-    <mat-icon>favorite</mat-icon>
-  </button>
-</mat-toolbar>
+<app-toolbar [brand]="brand" [logo]="logo"></app-toolbar>
+
 <mat-drawer-container class="sidenav">
   <mat-drawer class="sidenav__container" mode="side" opened
     ><mat-nav-list class="sidenav__list">
@@ -29,13 +17,13 @@
     </mat-nav-list>
   </mat-drawer>
   <mat-drawer-content class="sidenav__content">
-    <form [formGroup]="myGroup">
+    <!-- <form [formGroup]="myGroup">
       <angular-editor
         id="editor1"
         formControlName="htmlContent"
         [config]="editorConfig"
       ></angular-editor>
-    </form>
+    </form> -->
 
     <router-outlet></router-outlet
   ></mat-drawer-content>

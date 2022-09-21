@@ -20,8 +20,14 @@ Esse projeto foi feito com [Angular CLI](https://github.com/angular/angular-cli)
 
 ## Code Scaffolding
 
+- Criando componente em subpastas
+  `ng g c pasta1/paste2/nomeDoComponente`
+
+- Criando modulo em subpastas
+  `ng g m pasta1/paste2/nomeDoModulo`
+
 - Criando Lazy Loading Module
-  `ng generate module nomeDoModulo --route nomeDaRota --module app.module`
+  `ng g m nomeDoModulo --route nomeDaRota --module app.module`
 
 ## Build
 

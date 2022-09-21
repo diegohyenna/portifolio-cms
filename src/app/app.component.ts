@@ -1,16 +1,18 @@
 import { FormControl, FormGroup } from '@angular/forms';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { AngularEditorConfig } from '@kolkov/angular-editor';
+import { Svg, ISvg } from './shared/components/toolbar/logo';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent {
-  title =
-    '<h1 class="header__brand-title">Jupiter - CMS do meu <a class="header__brand-link " href="https://dgsite.web.app" target="_blank"> Portifólio</a></h1>';
+export class AppComponent implements OnInit {
+  brand!: string;
+  logo!: ISvg;
+
   links = [
     {
       href: '/home',
@@ -88,7 +90,13 @@ export class AppComponent {
 
   myGroup!: FormGroup;
 
-  ngOnInit() {
+  constructor() {}
+
+  ngOnInit(): void {
+    this.brand =
+      '<strong class="header__content-title">Jupiter</strong><small class="header__content-subtitle">CMS do meu <a class="header__content-link " href="https://dgsite.web.app" target="_blank"> Portifólio</a></small>';
+
+    this.logo = Svg;
     this.myGroup = new FormGroup({
       htmlContent: new FormControl(),
     });

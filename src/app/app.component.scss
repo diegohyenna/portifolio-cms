@@ -1,44 +1,4 @@
-// @use "@angular/material" as mat;
-
-// $my-custom-level: mat.define-typography-level(
-//   $font-family: Raleway,
-//   $font-weight: 400,
-//   $font-size: 1rem,
-//   $line-height: 1,
-//   $letter-spacing: normal,
-// );
-
-// @include mat.core($my-custom-level);
-
 @import "../styles.scss";
-
-.header {
-  .header__brand {
-    display: flex;
-    align-items: center;
-
-    .header__brand {
-      .header__brand-title {
-        text-transform: capitalize;
-        font-size: 1.8rem;
-
-        .header__brand-link {
-          color: $light-default;
-          text-decoration: none;
-
-          &:hover {
-            color: $light-secondary;
-            text-decoration: underline;
-          }
-        }
-      }
-    }
-  }
-
-  .header__spacer {
-    flex: 1 1 auto;
-  }
-}
 
 .sidenav {
   width: 100%;

@@ -1,7 +1,9 @@
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { ToolbarModule } from './shared/components/toolbar/toolbar.module';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AngularEditorModule } from '@kolkov/angular-editor';
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -11,11 +13,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
-import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
+import { SidenavComponent } from './shared/components/sidenav/sidenav.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, SidenavComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -23,8 +25,8 @@ import { MatButtonModule } from '@angular/material/button';
     MatSidenavModule,
     MatListModule,
     MatIconModule,
-    MatToolbarModule,
     MatButtonModule,
+    ToolbarModule,
     AngularEditorModule,
     ReactiveFormsModule,
     FormsModule,
