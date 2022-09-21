@@ -1,36 +1,27 @@
-import { MatToolbarModule } from '@angular/material/toolbar';
+import { SidenavModule } from './shared/components/sidenav/sidenav.module';
 import { ToolbarModule } from './shared/components/toolbar/toolbar.module';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AngularEditorModule } from '@kolkov/angular-editor';
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatListModule } from '@angular/material/list';
-import { MatIconModule } from '@angular/material/icon';
-import { MatButtonModule } from '@angular/material/button';
-import { SidenavComponent } from './shared/components/sidenav/sidenav.component';
-
 @NgModule({
-  declarations: [AppComponent, SidenavComponent],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatSidenavModule,
-    MatListModule,
-    MatIconModule,
-    MatButtonModule,
     ToolbarModule,
     AngularEditorModule,
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
+    SidenavModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

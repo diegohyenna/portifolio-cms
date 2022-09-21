@@ -1,30 +1,5 @@
 <app-toolbar [brand]="brand" [logo]="logo"></app-toolbar>
 
-<mat-drawer-container class="sidenav">
-  <mat-drawer class="sidenav__container" mode="side" opened
-    ><mat-nav-list class="sidenav__list">
-      <mat-list-item
-        class="sidenav__item"
-        *ngFor="let link of links"
-        [routerLink]="link.href"
-        [routerLinkActive]="'sidenav__item--active'"
-      >
-        <mat-icon mat-list-icon>{{ link.icon }}</mat-icon>
-        <div mat-line class="sidenav__item-title">
-          <strong>{{ link.title }}</strong>
-        </div>
-      </mat-list-item>
-    </mat-nav-list>
-  </mat-drawer>
-  <mat-drawer-content class="sidenav__content">
-    <!-- <form [formGroup]="myGroup">
-      <angular-editor
-        id="editor1"
-        formControlName="htmlContent"
-        [config]="editorConfig"
-      ></angular-editor>
-    </form> -->
-
-    <router-outlet></router-outlet
-  ></mat-drawer-content>
-</mat-drawer-container>
+<app-sidenav [links]="links">
+  <router-outlet></router-outlet>
+</app-sidenav>

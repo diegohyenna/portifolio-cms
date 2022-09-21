@@ -1,1 +1,20 @@
-<p>sidenav works!</p>
+<mat-drawer-container class="sidenav">
+  <mat-drawer class="sidenav__container" mode="side" opened
+    ><mat-nav-list class="sidenav__list">
+      <mat-list-item
+        class="sidenav__item"
+        *ngFor="let link of links"
+        [routerLink]="link.href"
+        [routerLinkActive]="'sidenav__item--active'"
+      >
+        <mat-icon mat-list-icon>{{ link.icon }}</mat-icon>
+        <div mat-line class="sidenav__item-title">
+          <strong>{{ link.title }}</strong>
+        </div>
+      </mat-list-item>
+    </mat-nav-list>
+  </mat-drawer>
+  <mat-drawer-content class="sidenav__content">
+    <ng-content></ng-content>
+  </mat-drawer-content>
+</mat-drawer-container>
