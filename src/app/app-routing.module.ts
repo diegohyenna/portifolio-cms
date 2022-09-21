@@ -1,3 +1,4 @@
+import { AboutEditComponent } from './about/about-edit/about-edit.component';
 import { HomeComponent } from './home/home.component';
 import {
   CUSTOM_ELEMENTS_SCHEMA,

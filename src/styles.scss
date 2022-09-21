@@ -1,8 +1,10 @@
 //OPTEI POR COLOCAR O CÓDIGO DE SASS TODO EM UM LUGAR SÓ PORQUE EM CADA COMPONENTE O MATERIAL ANGULAR NÃO ESTAVA DEIXANDO ALGUNS ESTILOS PERSONALIZADOS CARREGAREM, NÃO CONSIGO IDENTIFICAR O PORQUÊ DISSO
 
-//Font Raleway
+//Fonts
 
-@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+// @import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 //THEME
 
@@ -20,7 +22,7 @@ $light-default: #fff;
 // ROOT
 
 @mixin fontFamily() {
-  font-family: Raleway, Arial, "Helvetica Neue", sans-serif !important;
+  font-family: Poppins, Arial, "Helvetica Neue", sans-serif !important;
 }
 @mixin fontConfig() {
   font-size: 16px;
@@ -60,7 +62,7 @@ strong {
     flex-direction: row;
 
     .header__brand-logo {
-      margin-right: 8px;
+      margin-right: 12px;
       width: 36px;
       height: 36px;
 
@@ -76,9 +78,10 @@ strong {
       .header__content-title {
         display: block;
         text-transform: capitalize;
-        font-size: 1.4rem;
-        line-height: 1.4rem;
-        margin-bottom: 8px;
+        font-size: 1.2rem;
+        line-height: 1.2rem;
+        margin-bottom: 12px;
+        letter-spacing: 4px;
       }
 
       .header__content-subtitle {
