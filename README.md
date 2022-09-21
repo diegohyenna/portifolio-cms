@@ -8,6 +8,7 @@ Esse projeto foi feito com [Angular CLI](https://github.com/angular/angular-cli)
 - SCSS
 - Angular Material
 - @kolkov/angular-editor (Editor de Texto HTML)
+- Firebase
 
 ## Rodando localmente
 
