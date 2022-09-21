@@ -1,3 +1,4 @@
+import { FormGroup, FormControl } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -8,7 +9,16 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit {
   user = 'visitante';
 
+  myForm!: FormGroup;
+
   constructor() {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.myForm = new FormGroup({
+      rickTextEditor: new FormControl(),
+    });
+  }
+  onChanges(event: any) {
+    console.log(event);
+  }
 }

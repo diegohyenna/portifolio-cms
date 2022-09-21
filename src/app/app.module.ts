@@ -1,8 +1,6 @@
 import { SidenavModule } from './shared/components/sidenav/sidenav.module';
 import { ToolbarModule } from './shared/components/toolbar/toolbar.module';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { AngularEditorModule } from '@kolkov/angular-editor';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -17,9 +15,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AppRoutingModule,
     BrowserAnimationsModule,
     ToolbarModule,
-    AngularEditorModule,
-    ReactiveFormsModule,
-    FormsModule,
     HttpClientModule,
     SidenavModule,
   ],

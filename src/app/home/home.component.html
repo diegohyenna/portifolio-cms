@@ -1,1 +1,7 @@
 <h1>Bem vindo, {{ user }}!</h1>
+
+<app-richtext-editor
+  [myForm]="myForm"
+  myControl="rickTextEditor"
+  (onChanges)="onChanges($event)"
+></app-richtext-editor>
