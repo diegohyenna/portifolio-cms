@@ -1,2 +1,17 @@
-<p>about-edit works!</p>
-<a (click)="onBack()">Voltar</a>
+<a href="" (click)="onBack()">Voltar</a>
+
+<form [formGroup]="myFormGroup">
+  <mat-form-field appearance="fill">
+    <mat-label>Entre com o nome completo</mat-label>
+    <input
+      type="text"
+      matInput
+      placeholder="Nome Completo"
+      formControlName="profileName"
+      required
+    />
+    <mat-error *ngIf="this.myFormGroup.get('profileImage')?.invalid">{{
+      getErrorMessage()
+    }}</mat-error>
+  </mat-form-field>
+</form>
