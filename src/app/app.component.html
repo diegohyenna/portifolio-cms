@@ -1,5 +1,5 @@
-<app-toolbar [brand]="brand" [logo]="logo"></app-toolbar>
+<app-toolbar [brand]="brand" [logo]="logo" (onLogout)="logout()"></app-toolbar>
 
-<app-sidenav [links]="links">
+<app-sidenav [links]="links" [opened]="sidenavOpen">
   <router-outlet></router-outlet>
 </app-sidenav>

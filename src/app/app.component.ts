@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { NavigationEnd, Router } from '@angular/router';
+import { LoginService } from './services/login/login.service';
 import { Svg, ISvg } from './shared/components/toolbar/logo';
 
 @Component({
@@ -12,7 +14,20 @@ export class AppComponent implements OnInit {
 
   links: any = [];
 
-  constructor() {}
+  sidenavOpen = false;
+
+  constructor(private router: Router, private loginService: LoginService) {
+    router.events.forEach((event) => {
+      if (event instanceof NavigationEnd) {
+        if (!this.loginService.isLogged()) {
+          this.router.navigate(['/login']);
+          this.sidenavOpen = false;
+        } else {
+          this.sidenavOpen = true;
+        }
+      }
+    });
+  }
 
   ngOnInit(): void {
     this.brand =
@@ -47,5 +62,10 @@ export class AppComponent implements OnInit {
         icon: 'dataset',
       },
     ];
+  }
+
+  logout() {
+    this.loginService.logout();
+    this.router.navigate(['/login']);
   }
 }

@@ -30,6 +30,9 @@ Esse projeto foi feito com [Angular CLI](https://github.com/angular/angular-cli)
 - Criando Lazy Loading Module
   `ng g m nomeDoModulo --route nomeDaRota --module app.module`
 
+- Criando um serviço
+  `ng g s services/nomeDoServiçoPasta/nomeDoServiço`
+
 ## Build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.

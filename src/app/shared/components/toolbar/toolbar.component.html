@@ -25,8 +25,9 @@
   <button
     mat-icon-button
     class="header__favorite favorite-icon"
-    aria-label="Example icon-button with heart icon"
+    aria-label="Example icon-button with login icon"
+    (click)="logout()"
   >
-    <mat-icon>favorite</mat-icon>
+    <mat-icon aria-hidden="false" aria-label="{2:label} icon">login</mat-icon>
   </button>
 </mat-toolbar>

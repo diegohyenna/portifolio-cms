@@ -1,6 +1,6 @@
 import { SidenavModule } from './shared/components/sidenav/sidenav.module';
 import { ToolbarModule } from './shared/components/toolbar/toolbar.module';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -11,6 +11,8 @@ import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { provideDatabase, getDatabase } from '@angular/fire/database';
 import { AuthModule } from '@angular/fire/auth';
+import { HttpInterceptorProviders } from './interceptors';
+import { LoginInterceptor } from './interceptors/login/login.interceptor';
 
 @NgModule({
   declarations: [AppComponent],
@@ -25,7 +27,9 @@ import { AuthModule } from '@angular/fire/auth';
     provideDatabase(() => getDatabase()),
     AuthModule,
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: LoginInterceptor, multi: true },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -7,6 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class SidenavComponent implements OnInit {
   @Input('links') links!: any;
+  @Input('opened') opened!: boolean;
 
   constructor() {}
 
