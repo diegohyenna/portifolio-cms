@@ -17,7 +17,7 @@ export class AppComponent implements OnInit {
   sidenavOpen = false;
 
   constructor(private router: Router, private loginService: LoginService) {
-    router.events.forEach((event) => {
+    this.router.events.forEach((event) => {
       if (event instanceof NavigationEnd) {
         if (!this.loginService.isLogged()) {
           this.router.navigate(['/login']);
@@ -25,6 +25,16 @@ export class AppComponent implements OnInit {
         } else {
           this.sidenavOpen = true;
         }
+
+        // this.loginService.isLogged().then((response) => {
+        //   console.log(response);
+        //   if (!response) {
+        //     this.router.navigate(['/login']);
+        //     this.sidenavOpen = false;
+        //   } else {
+        //     this.sidenavOpen = true;
+        //   }
+        // });
       }
     });
   }
@@ -65,7 +75,9 @@ export class AppComponent implements OnInit {
   }
 
   logout() {
-    this.loginService.logout();
-    this.router.navigate(['/login']);
+    this.loginService.logout().then((response) => {
+      console.log(response);
+      this.router.navigate(['/login']);
+    });
   }
 }

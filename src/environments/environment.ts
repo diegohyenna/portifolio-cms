@@ -4,17 +4,15 @@
 
 export const environment = {
   firebase: {
-    projectId: 'cms-api-curriculo',
-    appId: '1:212348249722:web:c09e7c6d07150cdc83fdc3',
-    databaseURL: 'https://cms-api-curriculo.firebaseio.com',
-    storageBucket: 'cms-api-curriculo.appspot.com',
-    locationId: 'us-central',
-    apiKey: 'AIzaSyAtQSer6abZozwDTDUIPxro13IG7ua74E8',
-    authDomain: 'cms-api-curriculo.firebaseapp.com',
-    messagingSenderId: '212348249722',
-    measurementId: 'G-T2JP8JXRNQ',
+    apiKey: 'AIzaSyBCl9duzdVGwQJ02U1BV81haczvQyXEcwI',
+    authDomain: 'api-dgsite.firebaseapp.com',
+    projectId: 'api-dgsite',
+    storageBucket: 'api-dgsite.appspot.com',
+    messagingSenderId: '131286834271',
+    appId: '1:131286834271:web:76f01f76629d7b9a864fea',
+    measurementId: 'G-DRPLTDC80V',
   },
-  production: false
+  production: false,
 };
 
 /*

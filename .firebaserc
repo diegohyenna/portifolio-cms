@@ -1,14 +1,14 @@
 {
   "targets": {
-    "cms-api-curriculo": {
+    "api-dgsite": {
       "hosting": {
         "portifolio-cms": [
-          "dgsite-cms"
+          "api-dgsite"
         ]
       }
     }
   },
   "projects": {
-    "default": "cms-api-curriculo"
+    "default": "api-dgsite"
   }
 }

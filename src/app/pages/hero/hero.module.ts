@@ -1,5 +1,5 @@
 import { HeroComponent } from './hero.component';
-import { HomeModule } from './../home/home.module';
+import { HomeModule } from '../home/home.module';
 import { HeroRoutingModule } from './hero-routing.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';

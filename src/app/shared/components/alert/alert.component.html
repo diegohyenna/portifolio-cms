@@ -1,0 +1,13 @@
+<div class="app-alert">
+  <p class="message">{{ this.message }}</p>
+  <span matSnackBarActions>
+    <button
+      mat-button
+      matSnackBarAction
+      class="action-button"
+      (click)="snackBarRef.dismissWithAction()"
+    >
+      Fechar
+    </button>
+  </span>
+</div>

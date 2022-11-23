@@ -15,19 +15,12 @@ export class LoginInterceptor implements HttpInterceptor {
   constructor(private loginService: LoginService, private router: Router) {}
 
   intercept(
-    request: HttpRequest<unknown>,
+    request: HttpRequest<any>,
     next: HttpHandler
-  ): Observable<HttpEvent<unknown>> {
-    // localStorage.setItem('token', 'hushgugusagdig');
-    // if (!this.loginService.isLogged()) {
-    //   this.router.navigate(['/login']);
-    // }
+  ): Observable<HttpEvent<any>> {
+    // const auth = request.clone({ setHeaders: { Authorization: 'Bearer' } });
 
-    alert('arroz');
-
-    const auth = request.clone({ setHeaders: { Authorization: 'Bearer' } });
-
-    return next.handle(auth);
+    // return next.handle(auth);
 
     return next.handle(request);
   }

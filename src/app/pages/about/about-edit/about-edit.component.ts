@@ -40,9 +40,6 @@ export class AboutEditComponent implements OnInit {
     if (this.myFormGroup.get('profileImage')?.hasError('required')) {
       return 'Esse campo é obrigatório!';
     }
-
-    return this.myFormGroup.get('profileImage')?.hasError('profileName')
-      ? 'Esse campo é obrigatório'
-      : '';
+    return;
   }
 }

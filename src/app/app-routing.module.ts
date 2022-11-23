@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LoginGuard } from './guards/login.guard';
+import { LoggedGuard } from './guards/logged/logged.guard';
+import { LoginGuard } from './guards/login/login.guard';
 
 const routes: Routes = [
   {
@@ -10,35 +11,38 @@ const routes: Routes = [
   },
   {
     path: 'home',
-    loadChildren: () => import('./home/home.module').then((m) => m.HomeModule),
+    loadChildren: () =>
+      import('./pages/home/home.module').then((m) => m.HomeModule),
     canActivate: [LoginGuard],
   },
   {
     path: 'hero',
-    loadChildren: () => import('./hero/hero.module').then((m) => m.HeroModule),
+    loadChildren: () =>
+      import('./pages/hero/hero.module').then((m) => m.HeroModule),
     canActivate: [LoginGuard],
   },
   {
     path: 'about',
     loadChildren: () =>
-      import('./about/about.module').then((m) => m.AboutModule),
+      import('./pages/about/about.module').then((m) => m.AboutModule),
     canActivate: [LoginGuard],
   },
   {
     path: 'project',
     loadChildren: () =>
-      import('./project/project.module').then((m) => m.ProjectModule),
+      import('./pages/project/project.module').then((m) => m.ProjectModule),
     canActivate: [LoginGuard],
   },
   {
     path: 'login',
     loadChildren: () =>
-      import('./login/login.module').then((m) => m.LoginModule),
+      import('./pages/login/login.module').then((m) => m.LoginModule),
+    canActivate: [LoggedGuard],
   },
   {
     path: '**',
     loadChildren: () =>
-      import('./page-not-found/page-not-found.module').then(
+      import('./pages/page-not-found/page-not-found.module').then(
         (m) => m.PageNotFoundModule
       ),
   },

@@ -9,6 +9,7 @@
 //THEME
 
 $light-primary: #8a2be2;
+$light-primary-blur: #892be215;
 $light-secondary: #00eeff;
 $light-danger: #dc143c;
 $light-warning: #ffa500;
@@ -130,6 +131,93 @@ strong {
 }
 
 //FORM
+
 mat-form-field {
   width: 100%;
+  margin-bottom: 12px;
+
+  // &:focus-visible,
+  // &:focus,
+  // &:current > .mat-icon {
+  //   color: $light-primary !important;
+  // }
+
+  &.mat-form-field-invalid {
+    .mat-icon {
+      color: $light-danger;
+    }
+  }
+
+  // &.ng-valid > * {
+  //   color: $light-success;
+  //   border-color: $light-success;
+  // }
+}
+
+.mat-form-field-appearance-fill .mat-form-field-flex {
+  background-color: $light-primary-blur;
+}
+
+//LOGIN
+
+fieldset {
+  border-width: 4px;
+  border-color: $light-primary;
+  border-style: solid;
+  padding: 24px;
+
+  legend {
+    @include fontFamily();
+    @include fontConfig();
+    font-weight: bold;
+    padding: 0 12px;
+    color: $light-primary;
+  }
+}
+
+// ALERT
+
+.mat-snack-bar-container {
+  max-width: 100% !important;
+
+  &.success {
+    background-color: $light-success;
+    color: $light-text-primary;
+
+    .action-button {
+      background-color: $light-default;
+      color: $light-success;
+    }
+  }
+
+  &.danger {
+    background-color: $light-danger;
+    color: $light-default;
+
+    .action-button {
+      background-color: $light-default;
+      color: $light-danger;
+    }
+  }
+
+  &.info {
+    background-color: $light-info;
+    color: $light-default;
+
+    .action-button {
+      background-color: $light-default;
+      color: $light-info;
+    }
+  }
+
+  .app-alert {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+
+    .message {
+      margin: 0;
+    }
+  }
 }

@@ -1,4 +1,4 @@
-import { RichtextEditorModule } from './../shared/components/richtext-editor/richtext-editor.module';
+import { RichtextEditorModule } from '../../shared/components/richtext-editor/richtext-editor.module';
 import { HomeComponent } from './home.component';
 import { HomeRoutingModule } from './home-routing.module';
 import { NgModule } from '@angular/core';

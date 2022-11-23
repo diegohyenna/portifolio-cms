@@ -9,16 +9,16 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit {
   user = 'visitante';
 
-  myForm!: FormGroup;
+  // myForm!: FormGroup;
 
   constructor() {}
 
   ngOnInit() {
-    this.myForm = new FormGroup({
-      rickTextEditor: new FormControl(),
-    });
+    // this.myForm = new FormGroup({
+    //   rickTextEditor: new FormControl(),
+    // });
   }
-  onChanges(event: any) {
-    console.log(event);
-  }
+  // onChanges(event: any) {
+  //   console.log(event);
+  // }
 }

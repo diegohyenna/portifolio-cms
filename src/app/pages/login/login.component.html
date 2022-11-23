@@ -1,0 +1,54 @@
+<form [formGroup]="myForm">
+  <fieldset>
+    <legend>Entre no sistema por aqui!</legend>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Seu email</mat-label>
+      <input
+        type="email"
+        matInput
+        formControlName="email"
+        placeholder="Informe aqui o seu email"
+        [errorStateMatcher]="matcher"
+      />
+      <mat-icon matSuffix>face</mat-icon>
+
+      <!-- <mat-hint>sucesso!</mat-hint> -->
+      <mat-error
+        *ngIf="
+          this.myForm.get('email')?.hasError('email') &&
+          !this.myForm.get('email')?.hasError('required')
+        "
+      >
+        Informe um <strong>email válido!</strong>
+      </mat-error>
+      <mat-error *ngIf="this.myForm.get('email')?.hasError('required')">
+        O campo email é <strong>obrigatório!</strong>
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Sua senha</mat-label>
+      <input
+        type="password"
+        matInput
+        formControlName="password"
+        placeholder="Informe aqui a sua senha"
+      />
+      <mat-icon matSuffix>password</mat-icon>
+      <mat-error *ngIf="this.myForm.get('password')?.hasError('required')">
+        O campo senha é <strong>obrigatório!</strong>
+      </mat-error>
+      <mat-error *ngIf="this.myForm.get('password')?.hasError('pattern')">
+        O campo senha não pode ficar <strong>em branco!</strong>
+      </mat-error>
+    </mat-form-field>
+    <button
+      mat-flat-button
+      color="primary"
+      (click)="onLogin()"
+      [disabled]="this.myForm.invalid"
+    >
+      Logar
+    </button>
+  </fieldset>
+</form>

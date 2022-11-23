@@ -10,9 +10,18 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { provideDatabase, getDatabase } from '@angular/fire/database';
-import { AuthModule } from '@angular/fire/auth';
-import { HttpInterceptorProviders } from './interceptors';
+import { provideAuth, getAuth } from '@angular/fire/auth';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { LoginInterceptor } from './interceptors/login/login.interceptor';
+import {
+  provideAnalytics,
+  getAnalytics,
+  ScreenTrackingService,
+  UserTrackingService,
+} from '@angular/fire/analytics';
+import { provideStorage, getStorage } from '@angular/fire/storage';
+import { AlertModule } from './shared/components/alert/alert.module';
+import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 
 @NgModule({
   declarations: [AppComponent],
@@ -23,12 +32,19 @@ import { LoginInterceptor } from './interceptors/login/login.interceptor';
     ToolbarModule,
     HttpClientModule,
     SidenavModule,
+    AlertModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideDatabase(() => getDatabase()),
-    AuthModule,
+    AngularFireAuthModule,
+    provideAnalytics(() => getAnalytics()),
+    provideAuth(() => getAuth()),
+    provideStorage(() => getStorage()),
+    provideFirestore(() => getFirestore()),
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: LoginInterceptor, multi: true },
+    ScreenTrackingService,
+    UserTrackingService,
   ],
   bootstrap: [AppComponent],
 })
